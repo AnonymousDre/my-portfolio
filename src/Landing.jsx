@@ -1,6 +1,5 @@
 export default function Landing() {
 	const sections = [
-		{ id: "intro", title: "Intro" },
 		{ id: "home", title: "Home" },
 		{ id: "about", title: "About" },
 		{ id: "services", title: "Services" },
@@ -19,7 +18,7 @@ export default function Landing() {
 					className="landing-section"
 					aria-label={section.title}
 				>
-					{section.id === "intro" ? (
+					{section.id === "home" ? (
 						<>
 							<h1 className="landing-title">Your Name</h1>
 							<div className="landing-placeholder">Job Role / Short tagline</div>
