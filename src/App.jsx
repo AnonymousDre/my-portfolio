@@ -1,13 +1,13 @@
-import { useState } from "react";
 import Sidebar from "./Sidebar";
+import Landing from "./Landing";
 
 export default function Portfolio() {
   return (
-    <div>
+    <div className="app-layout">
       <Sidebar />
-      <div>
-        <h1>Portfolio</h1>
-      </div>
+      <main className="app-content">
+        <Landing />
+      </main>
     </div>
   );
 }
