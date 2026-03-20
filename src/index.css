@@ -77,8 +77,8 @@ body::-webkit-scrollbar {
   transform: rotate(-90deg);
   transform-origin: center;
   letter-spacing: 0.02em;
-  font-size: 23px;
-  margin: 60px; 
+  font-size: 15px;
+  margin: 35px; 
 }
 
 .icon {
@@ -132,13 +132,13 @@ body::-webkit-scrollbar {
 
 .landing {
   width: 100%;
+  background-color: #c07734;
 }
 
 .landing-section {
   min-height: 100vh;
-  padding: 48px;
+  padding: 10% 0px 0px 20%;
   scroll-margin-top: 16px;
-  border-bottom: 2px solid var(--sections-hover-color);
   box-sizing: border-box;
 }
 
@@ -149,4 +149,29 @@ body::-webkit-scrollbar {
 
 .landing-placeholder {
   opacity: 0.8;
+}
+
+#home {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  color:#000000;
+}
+
+.home-hero {
+  text-align: left;
+}
+
+.name {
+  margin: 0;
+  font-weight: 700;
+  font-family: sans-serif;
+  letter-spacing: 0.8em;
+  font-size: 30px;
+}
+
+.role {
+  margin: 0;
+  letter-spacing: 0.04em;
+  font-size: 90px;
 }
