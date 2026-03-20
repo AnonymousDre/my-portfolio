@@ -6,12 +6,32 @@
   --sections-hover-color:  #bda98b;
   --sidebar-width: 200px;
 }
+
+html {
+  scroll-behavior: smooth;
+}
 body {
   margin: 0;
   font-family: Arial, sans-serif;
   background-color: var(--background-color);
   color: var(--text-color);
+  overflow-x: hidden;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+body::-webkit-scrollbar {
+  width: 0;
+  height: 0;
+}
+
+.app-layout {
+  min-height: 100vh;
   padding-left: var(--sidebar-width);
+}
+
+.app-content {
+  min-height: 100vh;
 }
 
 .sidebar {
@@ -24,6 +44,8 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
+  overflow-x: hidden;
+  z-index: 10;
 }
 
 .sections {
@@ -36,6 +58,7 @@ body {
   justify-content: center;
   padding: 0px;
   background: var(--background-color);
+  overflow: hidden;
 }
 
 .sections li {
@@ -46,7 +69,7 @@ body {
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   color: var(--text-color);
   text-decoration: none;
-  font-weight: 300;
+  font-weight: 350;
   display: inline-block;
   position: relative;
   white-space: nowrap;
@@ -54,8 +77,8 @@ body {
   transform: rotate(-90deg);
   transform-origin: center;
   letter-spacing: 0.02em;
-  font-size: 25px;
-  margin: 60px;
+  font-size: 23px;
+  margin: 60px; 
 }
 
 .icon {
@@ -105,4 +128,25 @@ body {
 .sections a:focus-visible::after {
   transform: scaleX(1);
   font-size: 30px;
+}
+
+.landing {
+  width: 100%;
+}
+
+.landing-section {
+  min-height: 100vh;
+  padding: 48px;
+  scroll-margin-top: 16px;
+  border-bottom: 2px solid var(--sections-hover-color);
+  box-sizing: border-box;
+}
+
+.landing-title {
+  margin: 0 0 12px 0;
+  font-weight: 600;
+}
+
+.landing-placeholder {
+  opacity: 0.8;
 }
