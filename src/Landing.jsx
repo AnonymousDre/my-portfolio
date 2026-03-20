@@ -20,8 +20,11 @@ export default function Landing() {
 				>
 					{section.id === "home" ? (
 						<>
-							<h1 className="landing-title">Your Name</h1>
-							<div className="landing-placeholder">Job Role / Short tagline</div>
+							<div className="home-hero">
+								<p className="name">ANDRE THOMAS QUIZON</p>
+                                <h1 className="role">Cloud +</h1>
+								<h1 className="role">Full Stack Software Developer</h1>
+							</div>
 						</>
 					) : (
 						<>
