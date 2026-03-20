@@ -1,4 +1,49 @@
 function Sidebar() {
+  const navItems = [
+    { id: "home", label: "Home" },
+    { id: "about", label: "About" },
+    { id: "services", label: "Services" },
+    { id: "projects", label: "Projects" },
+    { id: "awards", label: "Awards" },
+    { id: "certificates", label: "Certificates" },
+    { id: "faqs", label: "FAQs" },
+  ];
+
+  const scrollToSection = (sectionId) => {
+    const target = document.getElementById(sectionId);
+    if (!target) return;
+
+    const prefersReducedMotion = window.matchMedia?.(
+      "(prefers-reduced-motion: reduce)"
+    )?.matches;
+
+    if (prefersReducedMotion) {
+      target.scrollIntoView({ behavior: "auto", block: "start" });
+      return;
+    }
+
+    const startY = window.scrollY || window.pageYOffset;
+    const targetY =
+      target.getBoundingClientRect().top + (window.scrollY || window.pageYOffset);
+
+    const durationMs = 250;
+    const startTime = performance.now();
+
+    const easeInOutCubic = (t) =>
+      t < 0.5 ? 4 * t * t * t : 1 - Math.pow(-2 * t + 2, 3) / 2;
+
+    const tick = (now) => {
+      const elapsed = now - startTime;
+      const progress = Math.min(1, elapsed / durationMs);
+      const eased = easeInOutCubic(progress);
+      const nextY = startY + (targetY - startY) * eased;
+      window.scrollTo(0, nextY);
+      if (progress < 1) requestAnimationFrame(tick);
+    };
+
+    requestAnimationFrame(tick);
+  };
+
   return (
     <div className="sidebar">
       {/* Top logo */}
@@ -8,13 +53,20 @@ function Sidebar() {
 
       {/* Centered links */}
       <ul className="sections">
-        <li><a href="/">Home</a></li>
-        <li><a href="/about">About</a></li>
-        <li><a href="/services">Services</a></li>
-        <li><a href="/projects">Projects</a></li>
-        <li><a href="/awards">Awards</a></li>
-        <li><a href="/certificates">Certificates</a></li>
-        <li><a href="/faqs">FAQs</a></li>
+        {navItems.map((item) => (
+          <li key={item.id}>
+            <a
+              href={`#${item.id}`}
+              onClick={(e) => {
+                e.preventDefault();
+                history.pushState(null, "", `#${item.id}`);
+                scrollToSection(item.id);
+              }}
+            >
+              {item.label}
+            </a>
+          </li>
+        ))}
       </ul>
 
       {/* Bottom socials */}
