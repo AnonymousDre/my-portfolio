@@ -24,6 +24,14 @@ export default function Landing() {
 								<p className="name">ANDRE THOMAS QUIZON</p>
                                 <h1 className="role">Cloud +</h1>
 								<h1 className="role">Full Stack Software Developer</h1>
+								<div className="home-actions">
+									<button type="button" className="home-button">
+										Let's Work Together
+									</button>
+									<button type="button" className="home-button">
+										View my Projects
+									</button>
+								</div>
 							</div>
 						</>
 					) : (

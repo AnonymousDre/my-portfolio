@@ -162,6 +162,21 @@ body::-webkit-scrollbar {
   text-align: left;
 }
 
+.home-actions {
+  display: flex;
+  gap: 12px;
+  margin-top: 18px;
+}
+
+.home-button {
+  border: none;
+  background: var(--background-color);
+  color: var(--text-color);
+  padding: 10px 16px;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
 .name {
   margin: 0;
   font-weight: 700;
