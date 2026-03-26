@@ -5,7 +5,6 @@ function Sidebar() {
     { id: "services", label: "Services" },
     { id: "projects", label: "Projects" },
     { id: "awards", label: "Awards" },
-    { id: "certificates", label: "Certificates" },
     { id: "faqs", label: "FAQs" },
   ];
 
@@ -27,12 +26,14 @@ function Sidebar() {
       target.getBoundingClientRect().top + (window.scrollY || window.pageYOffset);
 
     const durationMs = 250;
-    const startTime = performance.now();
+    let startTime;
 
     const easeInOutCubic = (t) =>
       t < 0.5 ? 4 * t * t * t : 1 - Math.pow(-2 * t + 2, 3) / 2;
 
     const tick = (now) => {
+      startTime ??= now;
+
       const elapsed = now - startTime;
       const progress = Math.min(1, elapsed / durationMs);
       const eased = easeInOutCubic(progress);
