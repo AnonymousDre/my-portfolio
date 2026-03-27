@@ -1,8 +1,8 @@
 export default function FAQs() {
   return (
     <section id="faqs" className="landing-section" aria-label="FAQs">
-      <h1 className="landing-title">FAQs</h1>
-      <div className="landing-placeholder">Placeholder content</div>
+      <h1 className="title">FAQs</h1>
+      <div className="placeholder">Placeholder content</div>
     </section>
   );
 }
