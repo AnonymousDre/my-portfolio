@@ -6,10 +6,10 @@ export default function Landing() {
 				<h1 className="role">Cloud +</h1>
 				<h1 className="role">Full Stack Software Developer</h1>
 				<div className="home-actions">
-					<button type="button" className="home-button">
+					<button type="button" className="home-button home-button-primary">
 						Let's Work Together
 					</button>
-					<button type="button" className="home-button">
+					<button type="button" className="home-button home-button-secondary">
 						View my Projects
 					</button>
 				</div>
