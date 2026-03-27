@@ -1,10 +1,13 @@
 :root{
-  --primary-color: #ff7b00;
+  /*--primary-color: #ff7b00; */
   --secondary-color: hsl(145, 63%, 49%);
   --background-color: #000000;
   --text-color: #ffffff;
   --sections-hover-color:  #bda98b;
   --sidebar-width: 200px;
+  --section-min-height: 100vh;
+  --home-padding-top: 15%;
+  --shadow-color: rgba(255, 0, 0, 0.39);
 }
 
 html {
@@ -85,8 +88,7 @@ body::-webkit-scrollbar {
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin-top: 30%;
-  gap: 10px;
+  margin-top: 15%;
 }
 
 .icon img {
@@ -95,6 +97,12 @@ body::-webkit-scrollbar {
   object-fit: contain;
 }
 
+.name-logo {
+  font-weight: 500;
+  font-family: sans-serif;
+  letter-spacing: 0.1em;
+  color: var(--text-color);
+}
 
 .socials {
   display: flex;
@@ -132,30 +140,75 @@ body::-webkit-scrollbar {
 
 .landing {
   width: 100%;
-  background-color: #c07734;
+  background-color: var(--background-color);
 }
 
 .landing-section {
-  min-height: 100vh;
+  min-height: var(--section-min-height);
   padding: 10% 0px 0px 20%;
   scroll-margin-top: 16px;
   box-sizing: border-box;
 }
 
-.landing-title {
-  margin: 0 0 12px 0;
-  font-weight: 600;
+.title {
+  margin: 0 0 40px 0;
+  font-weight: 550;
+  font-size: 25px;
 }
 
-.landing-placeholder {
+.placeholder {
   opacity: 0.8;
+  max-width: 70ch;
+  line-height: 1.6;
+}
+
+.placeholder p {
+  margin: 0 0 14px 0;
+}
+
+.placeholder p:last-child {
+  margin-bottom: 0;
+}
+
+.about-layout {
+  display: flex;
+  align-items: flex-start;
+  gap: 32px;
+}
+
+.about-text {
+  flex: 1 1 520px;
+}
+
+.about-media {
+  flex: 0 0 auto;
+}
+
+.about-photo {
+  display: block;
+  width: min(360px, 32vw);
+  max-width: 100%;
+  height: auto;
+  border-radius: 12px;
+  margin: 10% 0px 0px 30%;
+  box-shadow: 0 0 20px var(--shadow-color);
+}
+
+@media (max-width: 900px) {
+  .about-layout {
+    flex-direction: column;
+  }
+  .about-photo {
+    width: min(420px, 100%);
+  }
 }
 
 #home {
   display: flex;
   flex-direction: column;
   gap: 10px;
-  color:#000000;
+  color:#ffffff;
+  padding-top: var(--home-padding-top);
 }
 
 .home-hero {
@@ -170,11 +223,22 @@ body::-webkit-scrollbar {
 
 .home-button {
   border: none;
-  background: var(--background-color);
-  color: var(--text-color);
-  padding: 10px 16px;
+  padding: 15px 21px;
   border-radius: 10px;
   cursor: pointer;
+  font-weight: 700;
+}
+
+.home-button-primary {
+  background: #ffffff;
+  color: #000000;
+  box-shadow: 0 0 22px #ffffff7c;
+}
+
+.home-button-secondary {
+  background: #6b6b6b;
+  color:#ffffff;
+  box-shadow: 0 0 22px #444444;
 }
 
 .name {
