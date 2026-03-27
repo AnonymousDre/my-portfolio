@@ -1,3 +1,6 @@
+import githubIcon from "./assets/github.png";
+import linkedinIcon from "./assets/linkedin.png";
+
 function Sidebar() {
   const navItems = [
     { id: "home", label: "Home" },
@@ -49,7 +52,7 @@ function Sidebar() {
     <div className="sidebar">
       {/* Top logo */}
       <div className="icon">
-        <img src="/assets/logo.png" alt="logo" /> {/*change to text*/}
+        <h1 className="name-logo">AQ</h1>
       </div>
 
       {/* Centered links */}
@@ -72,8 +75,8 @@ function Sidebar() {
 
       {/* Bottom socials */}
       <div className="socials">
-        <img src="/assets/gblogo.png" alt="GitHub" />
-        <img src="/assets/lnlogo.png" alt="LinkedIn" />
+        <img src={githubIcon} alt="GitHub" />
+        <img src={linkedinIcon} alt="LinkedIn" />
       </div>
     </div>
   );
