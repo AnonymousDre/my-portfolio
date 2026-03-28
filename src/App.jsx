@@ -1,13 +1,25 @@
-import { useState } from "react";
 import Sidebar from "./Sidebar";
+import Landing from "./Landing";
+import About from "./About";
+import Services from "./Services";
+import Projects from "./Projects";
+import Awards from "./Awards";
+import FAQs from "./FAQs";
 
 export default function Portfolio() {
   return (
-    <div>
+    <div className="app-layout">
       <Sidebar />
-      <div>
-        <h1>Portfolio</h1>
-      </div>
+      <main className="app-content">
+        <div className="landing">
+          <Landing />
+          <About />
+          {/* <Services /> */}
+          <Projects />
+          <Awards />
+          <FAQs />
+        </div>
+      </main>
     </div>
   );
 }
