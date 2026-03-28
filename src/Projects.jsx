@@ -57,7 +57,16 @@ export default function Projects() {
               
             </div>
 
-            <p className="description">Developed using C#. Application is deployed locally using MariaDB as its database. It used to track employee information and manage their records such as salary and roles.</p>
+            <p className="description">This is a Windows desktop application built with C# 12 and .NET 8, 
+              designed to streamline employee management for small to medium-sized organizations. 
+              It features an intuitive Windows Forms (WinForms) interface, allowing users to efficiently manage employee information such as 
+              personal details, roles, salaries, and attendance records. The application supports full CRUD functionality, enabling users to add, 
+              view, update, and delete employee records with ease. It leverages a MariaDB/MySQL database as its backend, accessed through ADO.NET APIs,
+               ensuring secure and reliable data storage and retrieval. Targeted for local deployment on Windows systems, this project demonstrates 
+               practical skills in desktop application development, database integration, and UI design, making it a robust and efficient solution 
+               for managing payroll and attendance.
+            </p>
+            
           </div>
 
           <div className="projects-media" aria-label="Project images">
