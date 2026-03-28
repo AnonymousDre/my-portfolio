@@ -14,7 +14,7 @@ export default function Portfolio() {
         <div className="landing">
           <Landing />
           <About />
-          <Services />
+          {/* <Services /> */}
           <Projects />
           <Awards />
           <FAQs />
