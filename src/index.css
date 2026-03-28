@@ -732,7 +732,11 @@ body::-webkit-scrollbar {
 
 @media (max-width: 520px) {
   .projects-layout {
-    gap: 16px;
+    gap: 12px;
+  }
+
+  .projects-content .description {
+    margin: 12px 0 0 0;
   }
 
   .projects-media {
