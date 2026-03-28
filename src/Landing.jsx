@@ -58,9 +58,7 @@ export default function Landing() {
 					</button>
 					<a
 						className="home-button home-button-secondary"
-						href="https://github.com/AnonymousDre"
-						target="_blank"
-						rel="noopener noreferrer"
+						href="#projects"
 					>
 						View my Projects
 					</a>
