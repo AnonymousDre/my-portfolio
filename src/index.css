@@ -706,6 +706,7 @@ body::-webkit-scrollbar {
 @media (max-width: 900px) {
   .projects-layout {
     flex-direction: column;
+    gap: 20px;
   }
 
   .projects-layout.is-reversed {
@@ -730,6 +731,10 @@ body::-webkit-scrollbar {
 }
 
 @media (max-width: 520px) {
+  .projects-layout {
+    gap: 16px;
+  }
+
   .projects-media {
     grid-template-columns: 1fr;
   }
