@@ -5,7 +5,7 @@ function Sidebar() {
   const navItems = [
     { id: "home", label: "Home" },
     { id: "about", label: "About" },
-    { id: "services", label: "Services" },
+    // { id: "services", label: "Services" },
     { id: "projects", label: "Projects" },
     { id: "awards", label: "Awards" },
     { id: "faqs", label: "FAQs" },
