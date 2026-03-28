@@ -156,6 +156,16 @@ body::-webkit-scrollbar {
   font-size: 25px;
 }
 
+.subtitle {
+  margin: 22px 0 12px 0;
+  padding: 15px 0px 15px 0px;
+  font-weight: 550;
+  font-size: 16px;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  opacity: 0.85;
+}
+
 .placeholder {
   opacity: 0.8;
   max-width: 70ch;
@@ -178,6 +188,7 @@ body::-webkit-scrollbar {
 
 .about-text {
   flex: 1 1 520px;
+  min-width: 0;
 }
 
 .about-media {
@@ -190,7 +201,7 @@ body::-webkit-scrollbar {
   max-width: 100%;
   height: auto;
   border-radius: 12px;
-  margin: 10% 0px 0px 30%;
+  margin: 10% 0px 0px 0px;
   box-shadow: 0 0 20px var(--shadow-color);
 }
 
@@ -200,6 +211,7 @@ body::-webkit-scrollbar {
   }
   .about-photo {
     width: min(420px, 100%);
+    margin-top: 0;
   }
 }
 
@@ -253,4 +265,59 @@ body::-webkit-scrollbar {
   margin: 0;
   letter-spacing: 0.04em;
   font-size: 90px;
+}
+
+.skills-wrapper {
+  display: flex;
+  flex-direction: row;
+  gap: 12px;
+  flex-wrap: wrap;
+  max-width: 100%;
+}
+
+.skill-box {
+  background-color: #1a1a1a;
+  color: var(--text-color);
+  padding: 12px 18px;
+  border-radius: 30px;
+  font-size: 15px;
+  font-weight: 500;
+  border: 1px solid #333;
+  transition: all 0.3s ease;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  white-space: nowrap;
+}
+
+.skill-icon {
+  width: 18px;
+  height: 18px;
+  object-fit: contain;
+  flex: 0 0 auto;
+}
+
+.skill-label {
+  display: inline-block;
+}
+
+.skill-box:hover {
+  border-color: var(--sections-hover-color);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.5);
+  background-color: #2a2a2a;
+}
+
+.services-box {
+  display: flex;
+  flex-direction: row;
+  gap: 24px;
+}
+
+.services-box-item {
+  margin: 20px;
+  border-color: #ffffff;
+  border-radius: 12px;
+  flex: 1 1 300px;
+  transition: all 0.3s ease;
 }
