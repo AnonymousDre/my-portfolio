@@ -75,8 +75,12 @@ function Sidebar() {
 
       {/* Bottom socials */}
       <div className="socials">
-        <img src={githubIcon} alt="GitHub" />
-        <img src={linkedinIcon} alt="LinkedIn" />
+        <a href="https://www.linkedin.com/in/andre-thomas-quizon-386399331" target="_blank" rel="noopener noreferrer">
+          <img src={linkedinIcon} alt="LinkedIn" />
+        </a>
+        <a href="https://github.com/AnonymousDre" target="_blank" rel="noopener noreferrer">
+          <img src={githubIcon} alt="GitHub" />
+        </a>
       </div>
     </div>
   );
