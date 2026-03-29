@@ -653,6 +653,10 @@ body::-webkit-scrollbar {
     margin-top: 0;
   }
 
+  .name-logo {
+    font-size: 22px;
+  }
+
   .sections {
     position: static;
     inset: auto;
