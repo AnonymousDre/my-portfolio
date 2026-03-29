@@ -667,17 +667,19 @@ body::-webkit-scrollbar {
     flex-direction: row;
     justify-content: center;
     align-items: center;
+    flex-wrap: wrap;
     margin: 0;
     padding: 0;
     flex: 1 1 auto;
     min-width: 0;
-    overflow-x: auto;
+    overflow-x: visible;
   }
 
   .sections a {
     transform: none;
     margin: 0 10px;
     font-size: 12px;
+    white-space: normal;
   }
 
   .socials {
