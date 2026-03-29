@@ -2,7 +2,7 @@
 @import "@fontsource/google-sans/500.css";
 @import "@fontsource/google-sans/700.css";
 
-:root {
+:root{
   /*--primary-color: #ff7b00; */
   --background-color: #000000;
   --text-color: #ffffff;
@@ -270,6 +270,16 @@ body::-webkit-scrollbar {
   box-shadow: 0 0 20px var(--shadow-color);
 }
 
+@media (max-width: 900px) {
+  .about-layout {
+    flex-direction: column;
+  }
+  .about-photo {
+    width: min(420px, 100%);
+    margin-top: 0;
+  }
+}
+
 #home {
   display: flex;
   flex-direction: column;
@@ -462,6 +472,13 @@ body::-webkit-scrollbar {
   opacity: 0.85;
 }
 
+@media (max-width: 900px) {
+  .awards-grid {
+    grid-template-columns: 1fr;
+    max-width: 70ch;
+  }
+}
+
 .FAQs-items {
   display: flex;
   flex-direction: column;
@@ -616,20 +633,6 @@ body::-webkit-scrollbar {
     --home-padding-top: 96px;
   }
 
-  .about-layout {
-    flex-direction: column;
-  }
-
-  .about-photo {
-    width: min(420px, 100%);
-    margin-top: 0;
-  }
-
-  .awards-grid {
-    grid-template-columns: 1fr;
-    max-width: 70ch;
-  }
-
   .app-layout {
     padding-left: 0;
   }
@@ -676,7 +679,31 @@ body::-webkit-scrollbar {
     justify-content: center;
     text-align: center;
   }
+}
 
+.project-image,
+.project-imagePlaceholder {
+  width: 100%;
+  aspect-ratio: 16 / 10;
+  border-radius: 12px;
+  border: 1px solid #333;
+  background-color: #111;
+  overflow: hidden;
+}
+
+.project-image {
+  display: block;
+  height: auto;
+  object-fit: cover;
+}
+
+.description {
+  opacity: 0.85;
+  line-height: 1.6;
+  max-width: 70ch;
+}
+
+@media (max-width: 900px) {
   .projects-layout {
     flex-direction: column;
     gap: 20px;
@@ -701,29 +728,6 @@ body::-webkit-scrollbar {
     grid-template-columns: repeat(2, minmax(0, 1fr));
     align-self: stretch;
   }
-}
-
-.project-image,
-.project-imagePlaceholder {
-  width: 100%;
-  aspect-ratio: 16 / 10;
-  border-radius: 12px;
-  border: 1px solid #333;
-  background-color: #111;
-  overflow: hidden;
-}
-
-.project-image {
-  display: block;
-  height: auto;
-  object-fit: cover;
-}
-
-
-.description {
-  opacity: 0.85;
-  line-height: 1.6;
-  max-width: 70ch;
 }
 
 @media (max-width: 520px) {
