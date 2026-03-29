@@ -50,7 +50,6 @@ function Sidebar() {
 
   return (
     <div className="sidebar">
-      {/* Top logo */}
       <div className="icon">
         <h1 className="name-logo">AQ</h1>
       </div>
