@@ -645,7 +645,8 @@ body::-webkit-scrollbar {
     width: 100%;
     height: auto;
     flex-direction: row;
-    justify-content: space-between;
+    justify-content: center;
+    gap: 16px;
     padding: 12px 16px;
     box-sizing: border-box;
     overflow-x: visible;
@@ -670,7 +671,7 @@ body::-webkit-scrollbar {
     flex-wrap: wrap;
     margin: 0;
     padding: 0;
-    flex: 1 1 auto;
+    flex: 0 1 auto;
     min-width: 0;
     overflow-x: visible;
   }
