@@ -10,6 +10,15 @@ import award41 from "./assets/4 1.jpg";
 
 export default function Awards() {
   const [lightbox, setLightbox] = useState(null);
+  const [zoomedIndex, setZoomedIndex] = useState(null);
+
+  const shouldUseInPlaceZoom = () => {
+    if (typeof window === "undefined") return false;
+    const coarsePointer = window.matchMedia?.("(hover: none) and (pointer: coarse)")
+      ?.matches;
+    const smallViewport = window.matchMedia?.("(max-width: 900px)")?.matches;
+    return Boolean(coarsePointer || smallViewport);
+  };
 
   useEffect(() => {
     if (!lightbox) return;
@@ -21,6 +30,31 @@ export default function Awards() {
     document.addEventListener("keydown", onKeyDown);
     return () => document.removeEventListener("keydown", onKeyDown);
   }, [lightbox]);
+
+  useEffect(() => {
+    if (zoomedIndex === null) return;
+
+    const onKeyDown = (event) => {
+      if (event.key === "Escape") setZoomedIndex(null);
+    };
+
+    const onPointerDown = (event) => {
+      const target = event.target;
+      if (!(target instanceof Element)) return;
+      const activeButton = document.querySelector(
+        `button.award-media[data-award-index="${zoomedIndex}"]`
+      );
+      if (activeButton && activeButton.contains(target)) return;
+      setZoomedIndex(null);
+    };
+
+    document.addEventListener("keydown", onKeyDown);
+    document.addEventListener("pointerdown", onPointerDown);
+    return () => {
+      document.removeEventListener("keydown", onKeyDown);
+      document.removeEventListener("pointerdown", onPointerDown);
+    };
+  }, [zoomedIndex]);
 
   const awards = [
     {
@@ -73,19 +107,34 @@ export default function Awards() {
       <div className="subtitle">Dean’s Lister for 7 Consecutive Semesters</div>
       <ul className="awards-grid" aria-label="Awards list">
         {awards.map((award, index) => (
-          <li className="award-card" key={`${award.title}-${index}`}>
+          <li
+            className={`award-card${zoomedIndex === index ? " is-zoomed" : ""}`}
+            key={`${award.title}-${index}`}
+          >
             {award.imageSrc ? (
               <button
-                className="award-media"
+                className={`award-media${zoomedIndex === index ? " is-zoomed" : ""}`}
                 type="button"
-                onClick={() =>
+                data-award-index={index}
+                aria-pressed={zoomedIndex === index}
+                onClick={(event) => {
+                  if (shouldUseInPlaceZoom()) {
+                    event.preventDefault();
+                    setZoomedIndex((current) => (current === index ? null : index));
+                    return;
+                  }
+
                   setLightbox({
                     src: award.imageSrc,
                     alt: award.imageAlt || "",
                     title: award.title,
-                  })
+                  });
+                }}
+                aria-label={
+                  shouldUseInPlaceZoom()
+                    ? `${zoomedIndex === index ? "Zoom out" : "Zoom in"} image for ${award.title}`
+                    : `Open image for ${award.title}`
                 }
-                aria-label={`Open image for ${award.title}`}
               >
                 <img
                   className="award-image"
