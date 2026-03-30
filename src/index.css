@@ -652,6 +652,10 @@ body::-webkit-scrollbar {
     align-items: center;
   }
 
+  .role{
+    font-size: 42px;
+  }
+
   .icon {
     margin-top: 0;
   }
